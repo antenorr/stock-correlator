@@ -1,42 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
 <div>
   <app-tool-top></app-tool-top>
 </div>
-<div class="body-container">
-  <div class="parameters-left">
-      <!-- <mat-form-field>
-          <mat-select [(value)]="selected">
-            <mat-option>None</mat-option>
-            <mat-option value="option1">3M</mat-option>
-            <mat-option value="option2">American Express</mat-option>
-            <mat-option value="option3">Apple</mat-option>
-          </mat-select>
-      </mat-form-field>
-        
-        <p>You selected: {{selected}}</p>   -->
-
-        <form>
-            <mat-form-field>
-              <mat-select placeholder="Base Security" [(ngModel)]="selectedValue" name="food">
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                  {{food.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          
-            <p> Your Selection: {{selectedValue}} </p>
-        </form>
+<mat-card class="container">
+    <div class="row">
+      <div class="parameters-left col-12 col-md-4">
+            <form>
+                <mat-form-field>
+                  <mat-select placeholder="Base Security" [(ngModel)]="selectedValue" name="food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
+                <p> Your Selection: {{selectedValue}} </p>
+            </form>
+      </div>
+      <div class="content-right col-12 col-md-8">
+          --------charts will go here ---------
+      </div>
+  </div><!-- row ending div -->
+</mat-card><!-- container ending div -->
 
 
-  </div>
-  <div class="content-right">
-      charts here
-  </div>
-</div>
 
 
 

@@ -1,22 +1,15 @@
 
 
-.body-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .parameters-left {
-    width: 25%;
-    height: 100px;
-    background-color: rgba(229, 233, 232, 0.918);
-    padding: 1em;
+    /* width: 25%;
+    height: 100px; */
+    /* background-color: rgba(229, 233, 232, 0.918); */
+    /* padding: 1em; */
 }
 
 .content-right {
-    width: 65%;
-    height: 100px;
-    background-color: rgba(72, 188, 196, 0.596);
-    padding: 1em;
+    /* width: 65%;
+    height: 100px; */
+    background-color: rgba(229, 233, 232, 0.918); 
+    /* padding: 1em; */
 }

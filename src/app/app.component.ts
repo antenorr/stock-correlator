@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +13,9 @@ export class AppComponent {
   selectedValue: string;
 
   foods = [
-    {value: 'Symbol: MMM', viewValue: '3M'},
-    {value: 'Symbol: AXP', viewValue: 'American Express'},
-    {value: 'Symbol: AAPL', viewValue: 'Apple'}
+    {value: ' MMM', viewValue: '3M'},
+    {value: ' AXP', viewValue: 'American Express'},
+    {value: ' AAPL', viewValue: 'Apple'}
   ];
 
 }

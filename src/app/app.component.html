@@ -19,9 +19,23 @@
                   </mat-select>
                 </mat-form-field>
               
-                <p> Your Selection: {{selectedValue}} </p>
+                <p> Symbol: {{selectedValue}} </p>
             </form>
+            <br>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="picker" placeholder="Choose a start date">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi="true" #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <input matInput [matDatepicker]="endpicker" placeholder="Choose a end date">
+                <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi="true" #endpicker></mat-datepicker>
+              </mat-form-field>
+            
       </div>
+      <!-- ---*** --- Above is the initial base componenet that wil be replicated for correlator ---*** --- -->
       <div class="content-right col-12 col-md-8">
           --------charts will go here ---------
       </div>

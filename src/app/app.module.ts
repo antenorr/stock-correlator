@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule }  from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/'
 
 
 
@@ -34,7 +36,9 @@ import { ToolTopComponent } from './tool-top/tool-top.component';
     MatInputModule,
     MatCardModule,
     FormsModule,
-    MatSelectModule 
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule  
     
   ],
   providers: [],

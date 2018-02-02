@@ -19,13 +19,15 @@ import { MatDividerModule } from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { ToolTopComponent } from './tool-top/tool-top.component';
+import { MainEventCardComponent } from './main-event-card/main-event-card.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolTopComponent
+    ToolTopComponent,
+    MainEventCardComponent
   ],
   imports: [
     BrowserModule,

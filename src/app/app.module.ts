@@ -11,7 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule }  from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/'
+import { MatNativeDateModule } from '@angular/material/';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -38,7 +39,8 @@ import { ToolTopComponent } from './tool-top/tool-top.component';
     FormsModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule  
+    MatNativeDateModule,
+    MatDividerModule  
     
   ],
   providers: [],

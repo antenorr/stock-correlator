@@ -7,7 +7,7 @@
 <div>
   <app-tool-top></app-tool-top>
 </div>
-<mat-card class="container">
+<mat-card class="container position-container">
     <div class="row">
       <div class="parameters-left col-12 col-md-4">
             <form>
@@ -33,8 +33,26 @@
                 <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
                 <mat-datepicker touchUi="true" #endpicker></mat-datepicker>
             </mat-form-field>
-            
-      </div>
+
+            <mat-divider></mat-divider>
+            <br>
+            <br>
+            <!--*** --- Below is the correlation variable ---*** -->
+            <form>
+                <mat-form-field>
+                  <mat-select placeholder="Base Security" [(ngModel)]="selectedValue" name="food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              
+                <p> Symbol: {{selectedValue}} </p>
+            </form>
+
+
+         
+      </div>   <!-- parameters-left ending div -->
       <!-- ---*** --- Above is the initial base componenet that wil be replicated for correlator ---*** --- -->
       <div class="content-right col-12 col-md-8">
           --------charts will go here ---------

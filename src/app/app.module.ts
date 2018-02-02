@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -31,7 +33,8 @@ import { ToolTopComponent } from './tool-top/tool-top.component';
     MatIconModule,
     MatInputModule,
     MatCardModule,
-    FormsModule 
+    FormsModule,
+    MatSelectModule 
     
   ],
   providers: [],

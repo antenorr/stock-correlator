@@ -8,7 +8,30 @@
 </div>
 <div class="body-container">
   <div class="parameters-left">
-      Parameters
+      <!-- <mat-form-field>
+          <mat-select [(value)]="selected">
+            <mat-option>None</mat-option>
+            <mat-option value="option1">3M</mat-option>
+            <mat-option value="option2">American Express</mat-option>
+            <mat-option value="option3">Apple</mat-option>
+          </mat-select>
+      </mat-form-field>
+        
+        <p>You selected: {{selected}}</p>   -->
+
+        <form>
+            <mat-form-field>
+              <mat-select placeholder="Base Security" [(ngModel)]="selectedValue" name="food">
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                  {{food.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          
+            <p> Your Selection: {{selectedValue}} </p>
+        </form>
+
+
   </div>
   <div class="content-right">
       charts here

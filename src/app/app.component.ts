@@ -18,4 +18,10 @@ export class AppComponent {
     {value: ' AAPL', viewValue: 'Apple'}
   ];
 
+  correlators = [
+    {value: ' Gold USD', correlationVariable: 'Gold'},
+    {value: ' Silver USD', correlationVariable: 'Silver'},
+    {value: ' Copper USD', correlationVariable: 'Copper'}
+  ];
+
 }

@@ -10,9 +10,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   // selected = 'option2';
-  selectedValue: string;
+  selectedValue: string = " ";
+  selected: string;
+  answer: string;
 
-  foods = [
+  stocks = [
     {value: ' MMM', viewValue: '3M'},
     {value: ' AXP', viewValue: 'American Express'},
     {value: ' AAPL', viewValue: 'Apple'}
@@ -24,4 +26,14 @@ export class AppComponent {
     {value: ' Copper USD', correlationVariable: 'Copper'}
   ];
 
+  showValues() {
+    this.answer = this.selected;
+    console.log(this.answer);
+    this.answer = null;
+  }
+ 
+
+
 }
+
+

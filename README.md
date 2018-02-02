@@ -1,8 +1,8 @@
 # StockCorr
 
-This project represents an idea that natural phenomena or occurences in nature or the daily lives of human beings and other worldly events may play play a part in influencing the movement of financial securities.  Since securities are traded by individuals who cannot divorce themselves from natural occurences, I reason that the movement of financial securities are governed by the tendencies of traders who are governed by acute natural phenomena and occurence. 
+This project represents an idea that natural phenomena or occurences in nature, or the daily lives of human beings and other worldly events may play a significant role in influencing the movement of financial securities.  Because securities are traded by individuals who cannot divorce themselves from natural occurences and thus are to some degree influenced by them, I reason that the movement of financial securities are governed by the tendencies of traders who are governed by acute natural phenomena and occurence. 
 
-The premise with this application is to offer value to financial players.  To offer value by helping them view relationships between certain stocks and natural occurences that may be overlooked or taken for granted.  the hope of this application is to suggest possible correleations that may grant the financial trader insight of the possible future movements of a given security in order to make more informed decisions when entering and/or exiting a position.
+The purpose of this application is to offer value to financial players.  The value proposed is: to offer a possible advantage to financial security managers, helping them view relationships between certain stocks and natural occurences that may be overlooked or taken for granted.  The aim of this application is to suggest possible correleations that may grant the financial trader insight of the possible future movements of a given security in order to make more informed decisions when entering and/or exiting a position.
 
 <!-- ## Development server
 

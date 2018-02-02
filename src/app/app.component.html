@@ -14,15 +14,15 @@
             <mat-card>
                 <div class="green-background">
 
-                  <mat-form-field >
-                    <mat-select id="test "placeholder="Base Security" [(value)]="selectedValue" name="stock">
+                  <mat-form-field class="tenpx-margin-left">
+                    <mat-select placeholder="Base Security" [(value)]="selectedValue" name="stock">
                       <mat-option *ngFor="let stock of stocks" [value]="stock.value">
                         {{stock.viewValue}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                   
-                    <p> Symbol: {{selectedValue}} </p>
+                    <p class="tenpx-margin-left"> Symbol: {{selectedValue}} </p>
                   </div>
               
                 <br>
@@ -54,8 +54,8 @@
 
                 <div class="red-background">
 
-                    <mat-form-field color="warn">
-                        <mat-select [(value)]="selected">
+                    <mat-form-field color="warn" class="tenpx-margin-left">
+                        <mat-select [(value)]="selected" placeholder="Correlator Security">
                           <mat-option value="None">None</mat-option>
                           <mat-option value="GLD">Gold</mat-option>
                           <mat-option value="SLR">Silver</mat-option>
@@ -63,7 +63,7 @@
                         </mat-select>
                     </mat-form-field>
 
-                    <p>You selected Symbol: {{selected}}</p>
+                    <p class="tenpx-margin-left">You selected Symbol: {{selected}}</p>
 
 
                   <!-- 

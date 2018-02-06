@@ -15,32 +15,36 @@
                 <div class="green-background">
 
                   <mat-form-field class="tenpx-margin-left">
-                    <mat-select placeholder="Base Security" [(value)]="selectedValue" name="stock">
+                    <mat-select placeholder="Base Security" [(value)]="baseSelection" name="stock">
                       <mat-option *ngFor="let stock of stocks" [value]="stock.value">
                         {{stock.viewValue}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
                   
-                    <p class="tenpx-margin-left"> Symbol: {{selectedValue}} </p>
+                    <p class="tenpx-margin-left"> Symbol: {{baseSelection}} </p>
                   </div>
               
-                <br>
-                <mat-form-field class="example-full-width" class="font-color-green">
-                  <input matInput [matDatepicker]="picker" placeholder="Choose a start date">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker touchUi="true" #picker></mat-datepicker>
-                </mat-form-field>
+                  <br>
+                  <mat-form-field class="example-full-width" class="font-color-green">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="baseStartDate" name="startDate" placeholder="Choose a start date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"   ></mat-datepicker-toggle>
+                    <mat-datepicker touchUi="true" #picker ></mat-datepicker>
+                  </mat-form-field>
 
-                <mat-form-field class="example-full-width" class="font-color-green">
-                    <input matInput [matDatepicker]="endpicker" placeholder="Choose an end date">
-                    <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
-                    <mat-datepicker touchUi="true" #endpicker></mat-datepicker>
-                </mat-form-field>
-              
-                <mat-divider></mat-divider>
-                <br>
-                <br>
+                  <p class="tenpx-margin-left"> Symbol: {{ baseStartDate }} </p>
+
+                  <mat-form-field class="example-full-width" class="font-color-green">
+                      <input matInput [matDatepicker]="endpicker" [(ngModel)]="baseEndDate" name="endDate" placeholder="Choose an end date">
+                      <mat-datepicker-toggle matSuffix [for]="endpicker"></mat-datepicker-toggle>
+                      <mat-datepicker touchUi="true" #endpicker></mat-datepicker>
+                  </mat-form-field>
+
+                  <p class="tenpx-margin-left"> Symbol: {{ baseEndDate }} </p>
+                
+                  <mat-divider></mat-divider>
+                  <br>
+                  <br>
 
 
 
@@ -55,7 +59,7 @@
                 <div class="red-background">
 
                     <mat-form-field color="warn" class="tenpx-margin-left">
-                        <mat-select [(value)]="selected" placeholder="Correlator Security">
+                        <mat-select [(value)]="correlationSelection" placeholder="Correlator Security">
                           <mat-option value="None">None</mat-option>
                           <mat-option value="GLD">Gold</mat-option>
                           <mat-option value="SLR">Silver</mat-option>
@@ -63,7 +67,7 @@
                         </mat-select>
                     </mat-form-field>
 
-                    <p class="tenpx-margin-left">You selected Symbol: {{selected}}</p>
+                    <p class="tenpx-margin-left">You selected Symbol: {{ correlationSelection }}</p>
 
 
                   <!-- 
@@ -81,16 +85,20 @@
                 <br>
 
                   <mat-form-field class="example-full-width" color="warn" class="font-color-red">
-                      <input matInput [matDatepicker]="correlatorStartPicker" placeholder="Choose a start date">
+                      <input matInput [matDatepicker]="correlatorStartPicker" [(ngModel)]="correlatorStartDate" name="startDate" placeholder="Choose a start date">
                       <mat-datepicker-toggle matSuffix [for]="correlatorStartPicker"></mat-datepicker-toggle>
                       <mat-datepicker touchUi="true" #correlatorStartPicker></mat-datepicker>
                   </mat-form-field>
+
+                  <p class="tenpx-margin-left">You selected Symbol: {{ correlatorStartDate }}</p>
         
                   <mat-form-field class="example-full-width" color="warn" class="font-color-red">
-                      <input matInput [matDatepicker]="CorrelatorEndPicker" placeholder="Choose an end date">
+                      <input matInput [matDatepicker]="CorrelatorEndPicker" [(ngModel)]="correlatorEndDate" name="endDate" placeholder="Choose an end date">
                       <mat-datepicker-toggle matSuffix [for]="CorrelatorEndPicker"></mat-datepicker-toggle>
                       <mat-datepicker touchUi="true" #CorrelatorEndPicker></mat-datepicker>
                   </mat-form-field>
+
+                  <p class="tenpx-margin-left">You selected Symbol: {{ correlatorEndDate }}</p>
                   <br>
                   <button mat-raised-button color="primary" (click)="showValues()">Correlate!</button>
             </mat-card>

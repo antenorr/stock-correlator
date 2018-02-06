@@ -14,6 +14,8 @@ import { MatDatepickerModule }  from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { Injectable } from '@angular/core';
+
 
 
 
@@ -48,4 +50,8 @@ import { MainEventCardComponent } from './main-event-card/main-event-card.compon
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+
+}
+

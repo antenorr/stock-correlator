@@ -23,6 +23,8 @@ export class AppComponent {
   correlatorStartDate: string;
   correlatorEndDate: string;
 
+  allParameterValues: object;
+
 
 
   stocks = [
@@ -38,11 +40,18 @@ export class AppComponent {
   ];
 
   showValues() {
-    this.answer = this.correlationSelection;
-    //console.log(this.answer);
-    // console.log(this.baseSelection);
-    console.log(this.baseStartDate, this.baseEndDate);
-    this.answer = null;
+    //this.answer = this.correlationSelection;
+    let allParameterValues = {
+      baseSelection : this.baseSelection,
+      correlationSelection: this.correlationSelection,
+      baseStartDate: this.baseStartDate,
+      baseEndDate: this.baseEndDate,
+      correlatorStartDate: this.correlatorStartDate,
+      correlatorEndDate: this.correlatorEndDate
+    }
+    console.log(allParameterValues);
+  
+    //this.answer = null;
   }
  
 

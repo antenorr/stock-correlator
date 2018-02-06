@@ -15,7 +15,7 @@
                 <div class="green-background">
 
                   <mat-form-field class="tenpx-margin-left">
-                    <mat-select placeholder="Base Security" [(value)]="baseSelection" name="stock">
+                    <mat-select placeholder="Base Security" [(value)]="baseSelection"  name="stock">
                       <mat-option *ngFor="let stock of stocks" [value]="stock.value">
                         {{stock.viewValue}}
                       </mat-option>
@@ -56,59 +56,72 @@
 
 
 
-                <div class="red-background">
+                      <div class="red-background">
 
-                    <mat-form-field color="warn" class="tenpx-margin-left">
-                        <mat-select [(value)]="correlationSelection" placeholder="Correlator Security">
-                          <mat-option value="None">None</mat-option>
-                          <mat-option value="GLD">Gold</mat-option>
-                          <mat-option value="SLR">Silver</mat-option>
-                          <mat-option value="CPPR">Copper</mat-option>
+                        <mat-form-field color="warn" class="tenpx-margin-left">
+                            <mat-select [(value)]="correlationSelection" placeholder="Correlator Security">
+                              <mat-option value="None">None</mat-option>
+                              <mat-option value="GLD">Gold</mat-option>
+                              <mat-option value="SLR">Silver</mat-option>
+                              <mat-option value="CPPR">Copper</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <p class="tenpx-margin-left">You selected Symbol: {{ correlationSelection }}</p>
+
+
+                      <!-- 
+                        tried a different approach above
+                        <mat-form-field color="warn">
+                        <mat-select placeholder="Correlation Variable" [(ngModel)]="correlationVariable" name="correlator" >
+                          <mat-option *ngFor="let correlator of correlators" [value]="correlator.value" >
+                            {{correlator.correlationVariable}}
+                          </mat-option>
                         </mat-select>
-                    </mat-form-field>
+                      </mat-form-field>
+                    
+                      <p> Symbol: {{correlationVariable}} </p> -->
+                    </div>
+                    <br>
 
-                    <p class="tenpx-margin-left">You selected Symbol: {{ correlationSelection }}</p>
+                      <mat-form-field class="example-full-width" color="warn" class="font-color-red">
+                          <input matInput [matDatepicker]="correlatorStartPicker" [(ngModel)]="correlatorStartDate" name="startDate" placeholder="Choose a start date">
+                          <mat-datepicker-toggle matSuffix [for]="correlatorStartPicker"></mat-datepicker-toggle>
+                          <mat-datepicker touchUi="true" #correlatorStartPicker></mat-datepicker>
+                      </mat-form-field>
+
+                      <p class="tenpx-margin-left">You selected Symbol: {{ correlatorStartDate }}</p>
+            
+                      <mat-form-field class="example-full-width" color="warn" class="font-color-red">
+                          <input matInput [matDatepicker]="CorrelatorEndPicker" [(ngModel)]="correlatorEndDate" name="endDate" placeholder="Choose an end date">
+                          <mat-datepicker-toggle matSuffix [for]="CorrelatorEndPicker"></mat-datepicker-toggle>
+                          <mat-datepicker touchUi="true" #CorrelatorEndPicker></mat-datepicker>
+                      </mat-form-field>
+
+                      <p class="tenpx-margin-left">You selected Symbol: {{ correlatorEndDate }}</p>
+                      <br>
+                      <button mat-raised-button color="primary" (click)="showValues()">Correlate!</button>
+                </mat-card>
+              </form> 
+          </div>   <!-- parameters-left ending div -->
 
 
-                  <!-- 
-                    tried a different approach above
-                    <mat-form-field color="warn">
-                    <mat-select placeholder="Correlation Variable" [(ngModel)]="correlationVariable" name="correlator" >
-                      <mat-option *ngFor="let correlator of correlators" [value]="correlator.value" >
-                        {{correlator.correlationVariable}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                
-                  <p> Symbol: {{correlationVariable}} </p> -->
-                </div>
-                <br>
 
-                  <mat-form-field class="example-full-width" color="warn" class="font-color-red">
-                      <input matInput [matDatepicker]="correlatorStartPicker" [(ngModel)]="correlatorStartDate" name="startDate" placeholder="Choose a start date">
-                      <mat-datepicker-toggle matSuffix [for]="correlatorStartPicker"></mat-datepicker-toggle>
-                      <mat-datepicker touchUi="true" #correlatorStartPicker></mat-datepicker>
-                  </mat-form-field>
+          <!-- ---*** --- Above is the space for parameters for correlator -- BELOW wiil be visual chart space -- ---*** --- -->
+                <div class="content-right col-12 col-md-8">
+                    --------charts will go here ---------
+                    <app-main-event-card 
+                      [baseSelection]="baseSelection" 
+                      [correlationSelection]="correlationSelection" 
+                      [baseStartDate]="baseStartDate" 
+                      [baseEndDate]="baseEndDate" 
+                      [correlatorStartDate]="correlatorStartDate" 
+                      [correlatorEndDate]="correlatorEndDate"
+                      [allParameterValues]="allParameterValues">
+                    ...Loading
+                    </app-main-event-card>
 
-                  <p class="tenpx-margin-left">You selected Symbol: {{ correlatorStartDate }}</p>
-        
-                  <mat-form-field class="example-full-width" color="warn" class="font-color-red">
-                      <input matInput [matDatepicker]="CorrelatorEndPicker" [(ngModel)]="correlatorEndDate" name="endDate" placeholder="Choose an end date">
-                      <mat-datepicker-toggle matSuffix [for]="CorrelatorEndPicker"></mat-datepicker-toggle>
-                      <mat-datepicker touchUi="true" #CorrelatorEndPicker></mat-datepicker>
-                  </mat-form-field>
-
-                  <p class="tenpx-margin-left">You selected Symbol: {{ correlatorEndDate }}</p>
-                  <br>
-                  <button mat-raised-button color="primary" (click)="showValues()">Correlate!</button>
-            </mat-card>
-           </form> 
-      </div>   <!-- parameters-left ending div -->
-      <!-- ---*** --- Above is the initial base componenet that wil be replicated for correlator ---*** --- -->
-      <div class="content-right col-12 col-md-8">
-          --------charts will go here ---------
-          <app-main-event-card></app-main-event-card>
-      </div>
+           </div>
   </div><!-- row ending div -->
 </mat-card><!-- container ending div -->
 
